@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
-export default function Home() {
+export default function Hack() {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,8 +15,8 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>hack the planet!</h1>
 
-        <Link href='/hack'>
-          <a>Hack!</a>
+        <Link href='/'>
+          <a>Back!</a>
         </Link>
 
         <p className={styles.description}>

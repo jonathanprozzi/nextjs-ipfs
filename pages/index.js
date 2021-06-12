@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import BaseLink from "../components/BaseLink";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -14,9 +14,9 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>hack the planet!</h1>
 
-        <Link href='/hack'>
+        <BaseLink href='/hack'>
           <a>Hack!</a>
-        </Link>
+        </BaseLink>
       </main>
     </div>
   );

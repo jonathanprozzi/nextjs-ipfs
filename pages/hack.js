@@ -1,6 +1,6 @@
 import Head from "next/head";
+import BaseLink from "../components/BaseLink";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
 
 export default function Hack() {
   return (
@@ -14,9 +14,9 @@ export default function Hack() {
       <main className={styles.main}>
         <h1 className={styles.title}>hack the planet!</h1>
 
-        <Link href='/'>
+        <BaseLink href='/'>
           <a>Back!</a>
-        </Link>
+        </BaseLink>
       </main>
     </div>
   );

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import BaseLink from "../components/BaseLink";
 import styles from "../styles/Home.module.css";
@@ -13,7 +14,8 @@ export default function Hack() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>hack the planet!</h1>
-
+        Hostname:{" "}
+        {typeof window !== "undefined" ? window.location.pathname : ""}
         <BaseLink href='/'>
           <a>Back!</a>
         </BaseLink>

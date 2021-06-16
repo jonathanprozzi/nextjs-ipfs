@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import BaseLink from "../components/BaseLink";
 import styles from "../styles/Home.module.css";

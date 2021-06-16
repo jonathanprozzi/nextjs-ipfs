@@ -6,15 +6,15 @@ import { useRouter } from "next/router";
 
 function Hack() {
   const router = useRouter();
-  // useEffect(() => {
-  //   const { pathname } = window.location;
-  //   console.log(pathname);
-  //   const ipfsMatch = new RegExp("/.*\\/Qm\\w{44}\\//");
-  //   console.log(pathname === ipfsMatch ? "ipfs" : "not ipfs");
-  //   router.push(ipfsMatch ? "/hack?ipfs=true" : "/hack/", undefined, {
-  //     shallow: true,
-  //   });
-  // }, []);
+  useEffect(() => {
+    const { pathname } = window.location;
+    console.log(pathname);
+    const ipfsMatch = new RegExp("/.*\\/Qm\\w{44}\\//");
+    console.log(pathname === ipfsMatch ? "ipfs" : "not ipfs");
+    router.push(ipfsMatch ? "/hack?ipfs=true" : "/hack/", undefined, {
+      shallow: true,
+    });
+  }, []);
   return (
     <div className={styles.container}>
       <Head>

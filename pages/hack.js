@@ -2,8 +2,19 @@ import { useEffect } from "react";
 import Head from "next/head";
 import BaseLink from "../components/BaseLink";
 import styles from "../styles/Home.module.css";
+import { useRouter } from "next/router";
 
-export default function Hack() {
+function Hack() {
+  const router = useRouter();
+  useEffect(() => {
+    const { pathname } = window.location;
+    console.log(pathname);
+    const ipfsMatch = new RegExp("/.*\\/Qm\\w{44}\\//");
+    console.log(pathname === ipfsMatch ? "ipfs" : "not ipfs");
+    router.push(ipfsMatch ? "/hack?ipfs=true" : "/hack/", undefined, {
+      shallow: true,
+    });
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +25,7 @@ export default function Hack() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>hack the planet!</h1>
-        Hostname:{" "}
+
         {typeof window !== "undefined" ? window.location.pathname : ""}
         <BaseLink href='/'>
           <a>Back!</a>
@@ -23,3 +34,5 @@ export default function Hack() {
     </div>
   );
 }
+
+export default Hack;
